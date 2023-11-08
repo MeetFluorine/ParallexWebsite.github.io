@@ -3,84 +3,81 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 #wrapper{
     height: 100vh;
-    /* overflow-y: auto; */
     overflow-x: hidden;
-    perspective: 13px;
+    overflow-y: auto;
+    perspective: 10px;
 }
-
 .container{
     position: relative;
-    height: 100%;
     display: flex;
+    height: 100%;
     justify-content: center;
     align-items: center;
+    /* object-fit: cover; */
     transform-style: preserve-3d;
     z-index: -1;
-}
 
+}
 .background{
-    transform: translateZ(-40px) scale(5);
+    transform: translateZ(-40px) scale(6);
 }
-
 .foreground{
-    transform: translateZ(-20px) scale(3);
+    transform: translateZ(-20px) scale(4);
 }
 
 .background, .foreground{
-    position:absolute;
+    position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: cover;
     z-index: -1;
-}       
+}
 h1{
-    position: absolute;
-    top: 5rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 7px;
     font-size: 10rem;
-    color :white;
-    text-shadow: 0 0 10px rgba(0,0,0.3);
+    color: #fff;
+    font-weight: 800;
+    position: absolute;
+    top:5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 section{
-    background-color: rgba(45,45,45);
-    color: white;
+    background: rgb(45,45,45);
+    color: #fff;
     padding: 5rem 0;
 }
-
-.hng{
-    font-size:5rem;
-    padding:0 10rem;
+.secHead{
+    font-size: 5rem;
+    padding: 0 10rem;
 }
-
-.txt{
+.text{
     font-size: 1.5rem;
     padding: 0 10rem;
     margin: 5rem 0;
 }
-
-.desc{
-    position: absolute;
-    font-family:'Times New Roman', Times, serif;
-    background-color: white;
+.head{
+    position:absolute;
+    background-color: #fff;
+    color: #000;
     padding: 0.5rem 2.5rem;
-    top: 50%;
+    top:50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: black;
+    transform: translate(-50%,-50%);
     font-size: 3.5rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
-
 .bg{
     position: relative;
     width: 100%;
-    background-attachment: fixed;
     height: 500px;
     background-size: cover;
     background-position: center;
+
+    background-attachment: fixed;
+    /* z-index: 10; */
 }
 .bg1{
     background-image: url(./images/sport-1.jpg);
@@ -90,4 +87,66 @@ section{
 }
 .bg3{
     background-image: url(./images/sport-3.jpg);
+}
+@media  (max-width:1050px){
+    h1{
+        font-size: 8rem;
+    }
+    
+}
+
+@media (max-width:850px){
+    h1{
+        font-size: 6rem;
+    }
+    .secHead{
+        font-size: 4rem;
+    }
+    .text{
+        padding:0.5rem;
+    }
+    .head{
+        font-size: 2.7rem;
+    }
+}
+@media (max-width:650px){
+    h1{
+        font-size: 4.5rem;
+    }
+    .secHead{
+        font-size: 2.7rem;
+    }
+    .text{
+        padding:1.5rem;
+    }
+    .head{
+        font-size: 1.9rem;
+    }
+}
+@media (max-width:450px){
+    h1{
+        font-size: 3.5rem;
+    }
+    .secHead{
+        font-size: 2.4rem;
+        padding: 0rem 4.5rem;
+    }
+    .text{
+        margin-top: 0;
+    }
+    .head{
+        font-size: 1.5rem;
+        padding: 1.2rem;
+    }
+    .background{
+        transform: translateZ(-30px) scale(4);
+    }
+    .foreground{
+        transform: translateZ(-20px) scale(4);
+    }
+    .bg{
+        background-position: center ;
+
+    }
+    
 }
